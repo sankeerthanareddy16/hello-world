@@ -26,88 +26,64 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public Student[] getStudents() {
 		// Add your implementation here
-		return  students;
-
-
+		return students;
 	}
 
 	@Override
 	public void setStudents(Student[] students) {
 		// Add your implementation here
-
-		try{if(students==null)
-            throw  new IllegalArgumentException("illegal exception");
-		}
+		try{
+		if (students == null) {
+			throw new IllegalArgumentException();
+		}}
 		catch(IllegalArgumentException e)
-		System.out.println("exception found");
-       this.students=students;
+		{
+		    System.out.println(e);
+		}
+
+            this.students = students;
 	}
+
+
 
 	@Override
 	public Student getStudent(int index) {
 		// Add your implementation here
-		try
-{
-    if(index==0)
-                throw new IllegalArgumentException(illegalargument);
-}
-catch(IllegalArgumentException e)
-{
-    System.out.println("exception found");
-}
-               return students[index];
+		try{
+
+		if(index < 0 || index >= students.length) throw new IllegalArgumentException();
 
 	}
+	catch(IllegalArgumentException e)
+	{
+	    System.out.println(e)
+	}
+		return students[index];
+	}
+
 	@Override
 	public void setStudent(Student student, int index) {
 		// Add your implementation here
 		try{
-if(student==null)
- 		  throw new IllegalArgumentException(illegalargument);
-		if(index<0)
- 		  throw new IllegalArgumentException(illegalargument);
-}
-catch(IllegalArgumentException e)
-{
-    System.out.println("Exception Found");
-}
-		this.students[index]=student;
-
+		    if(index < 0 || index >= students.length) throw new IllegalArgumentException();
+		}
+		catch(IllegalArgumentException e)
+		{
+		    System.out.println(e);
+		}
+        return students[index]=student;
 	}
 
-	}
 
 	@Override
 	public void addFirst(Student student) {
 		// Add your implementation here
-		try
-{if(student==null)
- 		  throw new IllegalArgumentException();
-}
-catch(IllegalArgumentException e)
-{
-    System.out.println("Exception Found");
-}
-		this.students[0]=student;
-
 	}
-
 
 	@Override
 	public void addLast(Student student) {
 		// Add your implementation here
-		try{
-if(student==null)
- 		  throw new IllegalArgumentException();
-}
-catch(IllegalArgumentException e)
-{
-    System.out.println("Exception found");
-}
-		int a=this.students.length;
-		this.students[a-1]=student;
 	}
-
 
 	@Override
 	public void add(Student student, int index) {

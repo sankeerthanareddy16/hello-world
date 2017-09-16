@@ -2,11 +2,11 @@ import java.util.Date;
 
 /**
  * Class that stores information about the concrete student
- * 
+ *
  * DO NOT REMOVE given methods, but you can add new methods/fields/constructor
  * and change the given methods implementation. For example you can change implementation for equals()
  * or hashCode() method
- * 
+ *
  */
 public class Student implements Comparable {
 
@@ -79,8 +79,8 @@ public class Student implements Comparable {
 	public boolean equals(Object obj) {
 		return super.equals(obj);
 	}
-	
-	
+
+
 	/**
 	 * DO NOT change this method it will be used during the task check
 	 */
